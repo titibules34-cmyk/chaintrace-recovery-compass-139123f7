@@ -239,16 +239,16 @@ function Index() {
             <div
               id="services-menu"
               aria-hidden={!servicesOpen}
-              className={`absolute right-0 top-full z-50 w-[min(36rem,calc(100vw-2rem))] origin-top-right overflow-hidden rounded-3xl border border-border bg-card/50 p-4 shadow-2xl backdrop-blur-xl transition-[opacity,transform,visibility] duration-300 ease-out before:absolute before:-top-3 before:inset-x-0 before:h-3 ${
+              className={`absolute right-0 top-full z-50 w-[min(32rem,calc(100vw-2rem))] origin-top-right overflow-hidden rounded-2xl border border-border bg-card/50 p-3 shadow-2xl backdrop-blur-xl transition-[opacity,transform,visibility] duration-300 ease-out before:absolute before:-top-3 before:inset-x-0 before:h-3 ${
                 servicesOpen
                   ? "visible translate-y-0 scale-100 opacity-100"
                   : "invisible -translate-y-3 scale-95 opacity-0 pointer-events-none"
               }`}
             >
-              <div className="flex items-start justify-between gap-4 rounded-2xl bg-primary/10 p-4">
+              <div className="flex items-start justify-between gap-4 rounded-xl bg-primary/10 p-3">
                 <div>
                   <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-accent">Explore Cyber Justice</p>
-                  <p className="mt-1 text-lg font-extrabold text-foreground">Specialist services &amp; cyber tools</p>
+                  <p className="mt-1 text-base font-extrabold text-foreground">Specialist services &amp; cyber tools</p>
                   <p className="mt-1 max-w-sm text-xs leading-relaxed text-muted-foreground">Choose an investigation service or explore the intelligence capabilities behind our work.</p>
                 </div>
                 <span className="hidden h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-accent/20 bg-background/70 text-accent sm:flex">
@@ -262,8 +262,8 @@ function Index() {
                   <span className="text-[0.65rem] text-muted-foreground">04 specialist areas</span>
                 </div>
                 <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-                  <Link onClick={() => setServicesOpen(false)} to="/asset-recovery" className="group flex min-w-0 items-center gap-3 rounded-2xl border border-border/50 bg-background/20 p-3 transition duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-secondary">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-accent transition group-hover:bg-primary group-hover:text-primary-foreground"><DollarSign className="h-5 w-5" aria-hidden="true" /></span>
+                  <Link onClick={() => setServicesOpen(false)} to="/asset-recovery" className="group flex min-w-0 items-center gap-3 rounded-xl border border-border/50 bg-background/20 p-2.5 transition duration-150 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-secondary">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-accent transition group-hover:bg-primary group-hover:text-primary-foreground"><DollarSign className="h-5 w-5" aria-hidden="true" /></span>
                     <span className="min-w-0 flex-1"><span className="block text-xs font-bold text-foreground">Asset Tracing &amp; Investigations</span><span className="mt-1 block text-[0.68rem] text-muted-foreground">Follow assets and build an evidence trail</span></span>
                     <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-accent" aria-hidden="true" />
                   </Link>
