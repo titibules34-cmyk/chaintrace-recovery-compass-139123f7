@@ -16,7 +16,7 @@ export function useScrollReveal() {
           }
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+      { threshold: 0.2, rootMargin: "0px 0px -40px 0px" },
     );
 
     const tag = () => {
@@ -28,10 +28,10 @@ export function useScrollReveal() {
         el.dataset["reveal"] = "1";
         const siblings = el.parentElement ? Array.from(el.parentElement.children) : [];
         const idx = Math.min(siblings.indexOf(el), 6);
-        el.style.setProperty("--reveal-delay", `${idx * 90}ms`);
+        el.style.setProperty("--reveal-delay", `${idx * 140}ms`);
         el.classList.add("reveal");
         const r = el.getBoundingClientRect();
-        if (r.top < window.innerHeight * 0.9 && r.bottom > 0) {
+        if (r.top < window.innerHeight * 0.75 && r.bottom > 0) {
           requestAnimationFrame(() => el.classList.add("is-revealed"));
         } else {
           io.observe(el);
