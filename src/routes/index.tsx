@@ -239,13 +239,13 @@ function Index() {
             <div
               id="services-menu"
               aria-hidden={!servicesOpen}
-              className={`absolute right-0 top-full z-50 w-[min(32rem,calc(100vw-2rem))] origin-top-right overflow-hidden rounded-2xl border border-border bg-card/50 p-3 shadow-2xl backdrop-blur-xl transition-[opacity,transform,visibility] duration-300 ease-out before:absolute before:-top-3 before:inset-x-0 before:h-3 ${
+              className={`absolute left-1/2 top-full z-50 w-[min(28rem,calc(100vw-2rem))] -translate-x-1/2 origin-top overflow-hidden rounded-2xl border border-border bg-card/50 p-2.5 shadow-2xl backdrop-blur-xl transition-[opacity,transform,visibility] duration-300 ease-out before:absolute before:-top-3 before:inset-x-0 before:h-3 ${
                 servicesOpen
                   ? "visible translate-y-0 scale-100 opacity-100"
                   : "invisible -translate-y-3 scale-95 opacity-0 pointer-events-none"
               }`}
             >
-              <div className="flex items-start justify-between gap-4 rounded-xl bg-primary/10 p-3">
+              <div className="flex items-start justify-between gap-4 rounded-xl bg-primary/10 p-2.5">
                 <div>
                   <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-accent">Explore Cyber Justice</p>
                   <p className="mt-1 text-base font-extrabold text-foreground">Specialist services &amp; cyber tools</p>
