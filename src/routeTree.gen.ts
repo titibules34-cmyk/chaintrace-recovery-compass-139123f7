@@ -15,7 +15,6 @@ import { Route as AssetRecoveryRouteImport } from './routes/asset-recovery'
 import { Route as CryptocurrencyTracingRouteImport } from './routes/cryptocurrency-tracing'
 import { Route as CyberIntelligenceRouteImport } from './routes/cyber-intelligence'
 import { Route as CyberInvestigationTeamRouteImport } from './routes/cyber-investigation-team'
-import { Route as ApiPublicPushCertsRouteImport } from './routes/api/public/push-certs'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -47,11 +46,6 @@ const CyberInvestigationTeamRoute = CyberInvestigationTeamRouteImport.update({
   path: '/cyber-investigation-team',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiPublicPushCertsRoute = ApiPublicPushCertsRouteImport.update({
-  id: '/api/public/push-certs',
-  path: '/api/public/push-certs',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -60,7 +54,6 @@ export interface FileRoutesByFullPath {
   '/cryptocurrency-tracing': typeof CryptocurrencyTracingRoute
   '/cyber-intelligence': typeof CyberIntelligenceRoute
   '/cyber-investigation-team': typeof CyberInvestigationTeamRoute
-  '/api/public/push-certs': typeof ApiPublicPushCertsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -69,7 +62,6 @@ export interface FileRoutesByTo {
   '/cryptocurrency-tracing': typeof CryptocurrencyTracingRoute
   '/cyber-intelligence': typeof CyberIntelligenceRoute
   '/cyber-investigation-team': typeof CyberInvestigationTeamRoute
-  '/api/public/push-certs': typeof ApiPublicPushCertsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -79,7 +71,6 @@ export interface FileRoutesById {
   '/cryptocurrency-tracing': typeof CryptocurrencyTracingRoute
   '/cyber-intelligence': typeof CyberIntelligenceRoute
   '/cyber-investigation-team': typeof CyberInvestigationTeamRoute
-  '/api/public/push-certs': typeof ApiPublicPushCertsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -90,7 +81,6 @@ export interface FileRouteTypes {
     | '/cryptocurrency-tracing'
     | '/cyber-intelligence'
     | '/cyber-investigation-team'
-    | '/api/public/push-certs'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -99,7 +89,6 @@ export interface FileRouteTypes {
     | '/cryptocurrency-tracing'
     | '/cyber-intelligence'
     | '/cyber-investigation-team'
-    | '/api/public/push-certs'
   id:
     | '__root__'
     | '/'
@@ -108,7 +97,6 @@ export interface FileRouteTypes {
     | '/cryptocurrency-tracing'
     | '/cyber-intelligence'
     | '/cyber-investigation-team'
-    | '/api/public/push-certs'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -118,7 +106,6 @@ export interface RootRouteChildren {
   CryptocurrencyTracingRoute: typeof CryptocurrencyTracingRoute
   CyberIntelligenceRoute: typeof CyberIntelligenceRoute
   CyberInvestigationTeamRoute: typeof CyberInvestigationTeamRoute
-  ApiPublicPushCertsRoute: typeof ApiPublicPushCertsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -165,13 +152,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CyberInvestigationTeamRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/public/push-certs': {
-      id: '/api/public/push-certs'
-      path: '/api/public/push-certs'
-      fullPath: '/api/public/push-certs'
-      preLoaderRoute: typeof ApiPublicPushCertsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -182,7 +162,6 @@ const rootRouteChildren: RootRouteChildren = {
   CryptocurrencyTracingRoute: CryptocurrencyTracingRoute,
   CyberIntelligenceRoute: CyberIntelligenceRoute,
   CyberInvestigationTeamRoute: CyberInvestigationTeamRoute,
-  ApiPublicPushCertsRoute: ApiPublicPushCertsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
