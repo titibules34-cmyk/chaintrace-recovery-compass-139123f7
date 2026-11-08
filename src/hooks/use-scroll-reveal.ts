@@ -24,8 +24,8 @@ export function useScrollReveal() {
         "main section > *, main section .grid > *, section > div > *, section .grid > *",
       );
       els.forEach((el) => {
-        if (el.dataset.reveal) return;
-        el.dataset.reveal = "1";
+        if (el.dataset["reveal"]) return;
+        el.dataset["reveal"] = "1";
         const siblings = el.parentElement ? Array.from(el.parentElement.children) : [];
         const idx = Math.min(siblings.indexOf(el), 6);
         el.style.setProperty("--reveal-delay", `${idx * 90}ms`);
