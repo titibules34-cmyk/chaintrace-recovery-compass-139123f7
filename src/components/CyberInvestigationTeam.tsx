@@ -26,7 +26,7 @@ const clients: [string, LucideIcon][] = [
 export function CyberInvestigationTeam() {
   const [pair, setPair] = useState(0);
   useEffect(() => {
-    const t = setInterval(() => setPair((p) => (p + 1) % 2), 3000);
+    const t = setInterval(() => setPair((p) => (p + 1) % 2), 2400);
     return () => clearInterval(t);
   }, []);
   return (
@@ -64,7 +64,7 @@ export function CyberInvestigationTeam() {
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {solutions.map(([title, text], i) => (
-            <article key={title} className={`group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card p-4 transition duration-300 hover:-translate-y-1 hover:border-primary/60 hover:shadow-glow`}>
+            <article key={title} className={`group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card p-4 transition duration-150 hover:-translate-y-0.5 hover:border-primary/60 hover:shadow-glow`}>
               <div className="absolute right-0 top-0 h-16 w-16 rounded-bl-full bg-primary/[0.04] transition group-hover:bg-primary/[0.09]" />
               <div className="relative flex items-center justify-between">
                 {(() => {
