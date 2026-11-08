@@ -214,26 +214,25 @@ function Index() {
         <a href="#top" className="text-sm font-extrabold tracking-widest">
           CYBER <span className="text-accent">JUSTICE</span>
         </a>
-        <nav className="flex items-center gap-2 text-sm text-muted-foreground sm:gap-5">
-          <Link to="/about-us" className="hidden rounded-full px-3 py-2 transition hover:bg-secondary hover:text-foreground sm:inline">About Us</Link>
-          <div
-            className="relative"
+        <nav
+          className="relative flex items-center gap-2 text-sm text-muted-foreground sm:gap-5"
+          onMouseLeave={() => setServicesOpen(false)}
+          onBlurCapture={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+              setServicesOpen(false);
+            }
+          }}
+        >
+          <Link to="/about-us" onMouseEnter={() => setServicesOpen(false)} onClick={() => setServicesOpen(false)} className="hidden rounded-full px-3 py-2 transition hover:bg-secondary hover:text-foreground sm:inline">About Us</Link>
+          <button
+            type="button"
+            aria-expanded={servicesOpen}
+            aria-controls="services-menu"
             onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
             onFocusCapture={() => setServicesOpen(true)}
-            onBlurCapture={(event) => {
-              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
-                setServicesOpen(false);
-              }
-            }}
+            onClick={() => setServicesOpen((open) => !open)}
+            className={`inline-flex items-center gap-2 rounded-full px-3 py-2 font-semibold transition hover:bg-secondary hover:text-foreground sm:px-4 ${servicesOpen ? "bg-secondary/40 text-foreground" : ""}`}
           >
-            <button
-              type="button"
-              aria-expanded={servicesOpen}
-              aria-controls="services-menu"
-              onClick={() => setServicesOpen((open) => !open)}
-              className={`inline-flex items-center gap-2 rounded-full px-3 py-2 font-semibold transition hover:bg-secondary hover:text-foreground sm:px-4 ${servicesOpen ? "bg-secondary/40 text-foreground" : ""}`}
-            >
               Services
               <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} aria-hidden="true" />
             </button>
@@ -329,8 +328,7 @@ function Index() {
                 Explore all capabilities <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
-          </div>
-          <a href="#contact" className="rounded-full bg-primary px-4 py-2 font-semibold text-primary-foreground shadow-glow transition hover:-translate-y-0.5 hover:opacity-90">Contact</a>
+          <a href="#contact" onMouseEnter={() => setServicesOpen(false)} onClick={() => setServicesOpen(false)} className="rounded-full bg-primary px-4 py-2 font-semibold text-primary-foreground shadow-glow transition hover:-translate-y-0.5 hover:opacity-90">Contact</a>
         </nav>
       </header>
 
