@@ -223,7 +223,7 @@ function Index() {
             }
           }}
         >
-          <Link to="/about-us" className="hidden rounded-full px-3 py-2 transition hover:bg-secondary hover:text-foreground sm:inline">About Us</Link>
+          <Link to="/about-us" onMouseEnter={() => setServicesOpen(false)} onClick={() => setServicesOpen(false)} className="hidden rounded-full px-3 py-2 transition hover:bg-secondary hover:text-foreground sm:inline">About Us</Link>
           <button
             type="button"
             aria-expanded={servicesOpen}
@@ -328,7 +328,7 @@ function Index() {
                 Explore all capabilities <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
-          <a href="#contact" className="rounded-full bg-primary px-4 py-2 font-semibold text-primary-foreground shadow-glow transition hover:-translate-y-0.5 hover:opacity-90">Contact</a>
+          <a href="#contact" onMouseEnter={() => setServicesOpen(false)} onClick={() => setServicesOpen(false)} className="rounded-full bg-primary px-4 py-2 font-semibold text-primary-foreground shadow-glow transition hover:-translate-y-0.5 hover:opacity-90">Contact</a>
         </nav>
       </header>
 
