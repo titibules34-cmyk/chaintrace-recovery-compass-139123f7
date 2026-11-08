@@ -333,7 +333,7 @@ function Index() {
       </header>
 
       <section id="top" className="relative flex h-[80vh] min-h-[32rem] max-h-[46rem] items-end overflow-hidden">
-        <img src="/assets/cyber-justice-hero.webp" alt="Lady Justice in a blue digital investigation room" className="absolute inset-0 -z-20 h-full w-full object-cover" fetchPriority="high" />
+        <img src="/assets/cyber-justice-hero.webp" alt="Lady Justice in a blue digital investigation room" className="absolute inset-0 -z-20 h-full w-full object-cover object-[68%_center] sm:object-[72%_center]" fetchPriority="high" />
         <div className="hero-overlay absolute inset-0 -z-10" />
         <div className="mx-auto w-[min(100%-2rem,64rem)] pb-16 pt-32">
           <p className="eyebrow">Recovery forensics & investigations</p>
